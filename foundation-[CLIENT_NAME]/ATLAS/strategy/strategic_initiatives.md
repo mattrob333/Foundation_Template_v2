@@ -1,12 +1,12 @@
 ---
-title: "Disruption Threat Analysis"
+title: "Strategic Initiatives"
 source: "To be populated"
 owner: "intel@tier4.ai"
 agent_scope: ["ATLAS"]
 created: "2025-01-20"
-tags: ["disruption", "threats", "innovation"]
+tags: ["strategy", "initiatives", "planning"]
 ---
 
-# Disruption Threats
+# Strategic Initiatives
 
 *To be populated by research workflow*

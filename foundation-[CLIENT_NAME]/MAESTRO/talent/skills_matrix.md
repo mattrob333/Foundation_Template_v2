@@ -1,12 +1,12 @@
 ---
-title: "KPI Dashboard"
+title: "Skills Matrix & Gap Analysis"
 source: "To be populated"
 owner: "intel@tier4.ai"
-agent_scope: ["NAVIGATOR"]
+agent_scope: ["MAESTRO"]
 created: "2025-01-20"
-tags: ["kpi", "metrics", "operations"]
+tags: ["talent", "skills", "gaps"]
 ---
 
-# KPI Dashboard
+# Skills Matrix
 
 *To be populated by research workflow*

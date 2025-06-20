@@ -1,12 +1,12 @@
 ---
-title: "Disruption Threat Analysis"
+title: "Market Positioning Strategy"
 source: "To be populated"
 owner: "intel@tier4.ai"
 agent_scope: ["ATLAS"]
 created: "2025-01-20"
-tags: ["disruption", "threats", "innovation"]
+tags: ["market", "positioning", "strategy"]
 ---
 
-# Disruption Threats
+# Market Positioning
 
 *To be populated by research workflow*
