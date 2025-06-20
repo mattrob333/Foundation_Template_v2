@@ -1,0 +1,88 @@
+# Foundation™ Configuration Template
+# Instructions: Replace all [PLACEHOLDER] values with actual client information
+
+client:
+  # Basic Information
+  name: "[COMPANY_NAME]"                 # Full legal entity name
+  short_name: "[SHORT_NAME]"             # Abbreviated name for casual use
+  industry: "[INDUSTRY]"                 # Primary industry classification
+  sub_industry: "[SUB_INDUSTRY]"         # Secondary/specific classification
+  size: "[EMPLOYEE_RANGE]"               # Options: 1-10, 11-50, 51-200, 201-500, 500-1000, 1000+
+  website: "[COMPANY_WEBSITE]"           # Full URL including https://
+  founded: "[YEAR]"                      # Year founded
+  headquarters: "[CITY, STATE/COUNTRY]"  # Primary HQ location
+  
+  # Business Classification
+  archetype: "[ARCHETYPE]"               # EARLY_STARTUP, GROWTH_STARTUP, SCALE_UP, MID_MARKET, ENTERPRISE
+  stage: "[BUSINESS_STAGE]"              # Seed, Growth, Expansion, Transformation, Mature
+  public_private: "[STATUS]"             # Public, Private, Subsidiary, Non-Profit
+  parent_company: "[PARENT_IF_ANY]"      # Leave empty if independent
+  
+  # Key Metrics (optional - leave empty if unknown)
+  revenue_range: "[REVENUE_RANGE]"       # <$1M, $1M-$10M, $10M-$50M, $50M-$100M, $100M-$500M, $500M+
+  market_position: "[POSITION]"          # Leader, Challenger, Follower, Niche
+  growth_rate: "[GROWTH_ESTIMATE]"       # 0-10%, 10-25%, 25-50%, 50%+
+
+# Foundation Configuration
+foundation:
+  version: "2.0"                         # Template version - DO NOT CHANGE
+  created: "[DATE]"                      # Auto-populated during setup
+  last_updated: "[DATE]"                 # Auto-populated during updates
+  type: "[FOUNDATION_TYPE]"              # Set during classification workflow
+  
+  # Agent Configuration - DO NOT MODIFY
+  agents_enabled:
+    - "ATLAS"      # Strategic Intelligence Officer
+    - "NAVIGATOR"  # Operations Excellence Officer  
+    - "MAESTRO"    # Technology Integration Officer
+    - "CATALYST"   # Change & Adoption Officer
+
+# Strategic Context - Populated by discovery workflow
+strategy:
+  next_level_goals:
+    primary: "[TO_BE_DETERMINED]"
+    secondary: []
+  key_challenges: []
+  active_initiatives: []
+
+# Data Sources - Default configuration
+data_sources:
+  internal:                              
+    - "To be determined"
+  external:                              
+    - "Web research"
+    - "Public filings"
+    - "Industry reports"
+    - "News and media"
+  update_frequency:
+    market_data: "monthly"
+    competitor_intel: "bi-weekly"
+    internal_metrics: "quarterly"
+    news_sentiment: "weekly"
+
+# Integration Settings
+integrations:
+  github:
+    repo_name: "foundation-[client-name]"
+    visibility: "private"
+    branch: "main"
+  automation:
+    daily_updates: false
+    weekly_summaries: true
+    auto_research: false
+
+# Workflow Settings
+workflows:
+  discovery:
+    auto_classify: true
+    research_depth: "standard"           # basic, standard, comprehensive
+  maintenance:
+    stale_data_threshold: 30            # Days before data considered stale
+    auto_update_enabled: false
+
+# Template Metadata - DO NOT MODIFY
+template:
+  source: "tier4-foundation-template"
+  version: "2.0"
+  documentation: "/docs/README.md"
+  support: "support@tier4.ai"
