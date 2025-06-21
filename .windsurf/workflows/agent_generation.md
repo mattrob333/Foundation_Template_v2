@@ -1,404 +1,223 @@
 ---
-description: 
+description: Agent_Generation
 ---
 
-# Foundation™ Agent Generation Workflow
-Create customized AI executive personas calibrated for next-level transformation
+# /03_agent_generation
+Create customized AI executive personas calibrated for transformation
 
 ## Prerequisites
 - Completed `shared_context/company_overview.md`
-- Completed `shared_context/business_classification.md`
+- Completed `shared_context/business_classification.md` 
 - Completed `shared_context/next_level_goals.md`
-- Meta-prompt creator available (from paste.txt)
 
 ## Workflow Execution
 
-### Step 1: Gather Enhanced Context
+### Step 1: Gather Context (2 min)
 ```
-Load and analyze:
-1. shared_context/company_overview.md
-2. shared_context/business_classification.md  
-3. shared_context/next_level_goals.md
-4. shared_context/leadership_culture.md
+Load files:
+1. shared_context/company_overview.md → {{COMPANY_DATA}}
+2. shared_context/business_classification.md → {{CLASSIFICATION}}
+3. shared_context/next_level_goals.md → {{GOALS}}
 
-Extract critical variables:
-- Company Name: {{COMPANY_NAME}}
+Extract:
+- Company: {{NAME}}
 - Industry: {{INDUSTRY}}
-- Archetype: {{ARCHETYPE}}
-- Next Level: {{TRANSFORMATION_GOAL}}
-- Key Challenges: {{TOP_3_CHALLENGES}}
-- Success Metrics: {{KEY_METRICS}}
+- Stage: {{ARCHETYPE}}
+- Next Level: {{TRANSFORMATION}}
 ```
 
-### Step 2: Industry Intelligence Enhancement
+### Step 2: Industry Intelligence (5 min)
 ```
-@web search "{{INDUSTRY}} {{ARCHETYPE}}" executive priorities KPIs:
-- What do successful leaders focus on?
-- Industry-specific metrics that matter
+@web search "{{INDUSTRY}} {{ARCHETYPE}} executive priorities KPIs challenges"
+
+Focus on:
+- What metrics matter most at this stage
 - Common strategic mistakes to avoid
-- Technology trends reshaping the industry
-- Talent and culture requirements
+- Technology adoption patterns
+- Cultural success factors
+
+Create new file: shared_context/industry_intelligence.md
 ```
 
-Save findings to: `shared_context/industry_intelligence.md`
-
-### Step 3: Technology Landscape Analysis
-```
-@web search "{{INDUSTRY}} technology trends 2025 digital transformation":
-- Emerging technologies gaining adoption
-- Table stakes vs differentiating tech
-- Build vs buy patterns in the industry
-- Common technical debt issues
-- Innovation leaders and their strategies
-```
-
-Save findings to: `shared_context/tech_landscape.md`
-
-### Step 4: Create Agent Calibration Files
-
-#### ATLAS Calibration
-Create: `.agents/calibration/ATLAS_calibration.md`
+### Step 3: Create Calibration Guide (5 min)
+Create new file: `.agents/calibration_guide.md`
 
 ```markdown
-# ATLAS Calibration for {{COMPANY_NAME}}
+# Agent Calibration for {{COMPANY_NAME}}
 
-## Strategic Focus for Next Level
-To help {{COMPANY_NAME}} achieve {{NEXT_LEVEL}}, ATLAS must:
+## Company Context
+- Industry: {{INDUSTRY}}
+- Stage: {{ARCHETYPE}} 
+- Goal: {{TRANSFORMATION}}
+- Timeline: 12-18 months
 
-### 1. Identify Non-Obvious Opportunities
-- Market Segments: Focus on {{SPECIFIC_SEGMENTS}}
-- Geographic Expansion: Evaluate {{REGIONS}}
-- Adjacent Markets: Explore {{ADJACENCIES}}
-- Partnership Potential: {{STRATEGIC_PARTNERS}}
+## ATLAS Focus
+Strategic priorities for {{TRANSFORMATION}}:
+- Market: {{MARKET_OPPORTUNITY}}
+- Competition: {{COMPETITIVE_FOCUS}}
+- Growth: {{GROWTH_STRATEGY}}
+Key Question: "What move doubles our impact?"
 
-### 2. Anticipate Competitive Threats
-- Direct Competitors: Monitor {{TOP_3_COMPETITORS}}
-- Indirect Threats: Watch {{DISRUPTION_SOURCES}}
-- New Entrants: Track {{STARTUP_CATEGORIES}}
-- Platform Shifts: {{TECHNOLOGY_CHANGES}}
+## NAVIGATOR Focus  
+Operational priorities for {{TRANSFORMATION}}:
+- Metrics: {{KEY_METRICS}}
+- Efficiency: {{OPTIMIZATION_TARGETS}}
+- Scale: {{SCALING_NEEDS}}
+Key Question: "What's blocking our growth?"
 
-### 3. Guide Strategic Decisions
-- Decision Framework: {{FRAMEWORK_TYPE}}
-- Time Horizon: {{PLANNING_PERIOD}}
-- Risk Tolerance: {{RISK_LEVEL}}
-- Investment Priorities: {{FOCUS_AREAS}}
+## MAESTRO Focus
+Technology priorities for {{TRANSFORMATION}}:
+- Platform: {{TECH_NEEDS}}
+- Automation: {{AUTOMATION_TARGETS}}
+- Innovation: {{TECH_DIFFERENTIATORS}}
+Key Question: "What tech gives us an edge?"
 
-## Key Questions ATLAS Must Answer
-1. "What market opportunity could double our revenue in 18 months?"
-2. "Which competitor move could hurt us most?"
-3. "What strategic capability do we need to build now?"
-4. "Where should we place our big bets?"
+## CATALYST Focus
+Change priorities for {{TRANSFORMATION}}:
+- Culture: {{CULTURE_SHIFTS}}
+- Adoption: {{CHANGE_TARGETS}}
+- Readiness: {{PREPARATION_NEEDS}}
+Key Question: "How do we bring everyone along?"
 
-## Industry-Specific Intelligence
-- Track Metrics: {{INDUSTRY_KPIS}}
-- Monitor Trends: {{SPECIFIC_TRENDS}}
-- Regulatory Watch: {{COMPLIANCE_AREAS}}
-- M&A Activity: {{CONSOLIDATION_PATTERNS}}
-
-## Success Looks Like
-- {{COMPANY_NAME}} enters {{NEW_MARKET}} successfully
-- Competitive advantage in {{CAPABILITY}} established
-- Strategic options expanded from {{X}} to {{Y}}
-- Market position improved to {{TARGET_POSITION}}
+## Success Metrics
+- {{METRIC_1}}
+- {{METRIC_2}}
+- {{METRIC_3}}
 ```
 
-#### NAVIGATOR Calibration
-Create: `.agents/calibration/NAVIGATOR_calibration.md`
+### Step 4: Enhance Company Overview (3 min)
+Create new file: `shared_context/enhanced_overview.md`
 
-```markdown
-# NAVIGATOR Calibration for {{COMPANY_NAME}}
-
-## Operational Focus for Next Level
-To help {{COMPANY_NAME}} achieve {{NEXT_LEVEL}}, NAVIGATOR must:
-
-### 1. Optimize Critical Metrics
-- North Star Metric: {{PRIMARY_METRIC}}
-- Current Performance: {{BASELINE}}
-- Target Performance: {{GOAL}}
-- Improvement Path: {{APPROACH}}
-
-### 2. Build Scalable Operations
-- Current State: {{PROCESS_MATURITY}}
-- Target State: {{SCALED_PROCESSES}}
-- Key Systems: {{SYSTEMS_NEEDED}}
-- Automation Priorities: {{AUTOMATION_TARGETS}}
-
-### 3. Drive Efficiency Gains
-- Cost Structure: Optimize {{COST_AREAS}}
-- Revenue Operations: Improve {{REVENUE_PROCESSES}}
-- Resource Allocation: Rebalance {{RESOURCES}}
-- Productivity: Increase {{PRODUCTIVITY_METRICS}}
-
-## Key Questions NAVIGATOR Must Answer
-1. "What's preventing us from scaling efficiently?"
-2. "Which processes need to be rebuilt vs optimized?"
-3. "How do we improve {{KEY_METRIC}} by {{X}}%?"
-4. "What operational capabilities differentiate leaders?"
-
-## {{ARCHETYPE}}-Specific Priorities
-- Focus Metrics: {{STAGE_APPROPRIATE_KPIS}}
-- Benchmark Against: {{PEER_COMPANIES}}
-- Best Practices: {{INDUSTRY_STANDARDS}}
-- Quick Wins: {{IMMEDIATE_OPPORTUNITIES}}
-
-## Success Looks Like
-- {{KEY_METRIC}} improved from {{CURRENT}} to {{TARGET}}
-- Operational efficiency increased by {{X}}%
-- Scaling bottlenecks eliminated
-- Predictable, repeatable growth engine
-```
-
-#### MAESTRO Calibration  
-Create: `.agents/calibration/MAESTRO_calibration.md`
-
-```markdown
-# MAESTRO Calibration for {{COMPANY_NAME}}
-
-## Technology Focus for Next Level
-To help {{COMPANY_NAME}} achieve {{NEXT_LEVEL}}, MAESTRO must:
-
-### 1. Enable Competitive Advantage
-- Current Tech Debt: {{DEBT_ASSESSMENT}}
-- Platform Requirements: {{PLATFORM_NEEDS}}
-- Differentiating Tech: {{UNIQUE_CAPABILITIES}}
-- Innovation Areas: {{INNOVATION_TARGETS}}
-
-### 2. Drive Digital Transformation
-- Automation Targets: {{PROCESS_AUTOMATION}}
-- Data Strategy: {{DATA_PRIORITIES}}
-- AI/ML Opportunities: {{AI_USE_CASES}}
-- Integration Needs: {{SYSTEM_CONNECTIONS}}
-
-### 3. Build Technical Capability
-- Current Skills: {{SKILL_BASELINE}}
-- Required Skills: {{FUTURE_SKILLS}}
-- Talent Strategy: {{HIRING_PLAN}}
-- Partner Ecosystem: {{TECHNOLOGY_PARTNERS}}
-
-## Key Questions MAESTRO Must Answer
-1. "What technology will give us unfair advantage?"
-2. "Build vs buy vs partner for {{CAPABILITY}}?"
-3. "How do we modernize without disrupting operations?"
-4. "What technical debt must we address now?"
-
-## {{INDUSTRY}}-Specific Technology
-- Industry Standards: {{TECH_STANDARDS}}
-- Emerging Tech: {{NEW_TECHNOLOGIES}}
-- Security Requirements: {{SECURITY_NEEDS}}
-- Compliance Tech: {{COMPLIANCE_TOOLS}}
-
-## Success Looks Like
-- Technology enables {{X}}% productivity gain
-- Time-to-market reduced by {{Y}}%
-- Technical differentiation achieved in {{AREA}}
-- Platform ready for {{SCALE_TARGET}}
-```
-
-#### CATALYST Calibration
-Create: `.agents/calibration/CATALYST_calibration.md`
-
-```markdown
-# CATALYST Calibration for {{COMPANY_NAME}}
-
-## Change Focus for Next Level  
-To help {{COMPANY_NAME}} achieve {{NEXT_LEVEL}}, CATALYST must:
-
-### 1. Navigate Cultural Evolution
-- Current Culture: {{CULTURE_STATE}}
-- Required Culture: {{TARGET_CULTURE}}
-- Values to Preserve: {{CORE_VALUES}}
-- Behaviors to Change: {{NEW_BEHAVIORS}}
-
-### 2. Drive Adoption Success
-- Change Readiness: {{READINESS_SCORE}}/10
-- Resistance Points: {{RESISTANCE_AREAS}}
-- Champion Network: {{CHAMPIONS}}
-- Communication Needs: {{COMM_STRATEGY}}
-
-### 3. Build Change Capability
-- Current Capability: {{CHANGE_MATURITY}}
-- Required Capability: {{TARGET_MATURITY}}
-- Training Needs: {{SKILL_GAPS}}
-- Support Systems: {{SUPPORT_REQUIRED}}
-
-## Key Questions CATALYST Must Answer
-1. "What cultural shifts enable our transformation?"
-2. "Who are the key influencers to engage?"
-3. "What's the fastest path to adoption?"
-4. "How do we sustain momentum?"
-
-## {{ARCHETYPE}}-Specific Change Needs
-- Stage Challenges: {{GROWTH_CHALLENGES}}
-- Cultural Patterns: {{CULTURE_PATTERNS}}
-- Success Factors: {{ENABLERS}}
-- Failure Modes: {{RISKS}}
-
-## Success Looks Like
-- {{X}}% adoption of new {{INITIATIVE}}
-- Employee engagement increased to {{TARGET}}
-- Change velocity improved by {{Y}}%
-- Innovation culture established
-```
-
-### Step 5: Create Enhanced Company Overview
-
-Combine all insights into: `shared_context/enhanced_company_overview.md`
-
-This file will be the input to the meta-prompt creator. It should include:
-- All sections from company_overview.md
+Combine:
+- Original company overview
 - Classification insights
 - Next level goals
 - Industry intelligence
-- Technology landscape
-- Leadership culture
+- Key challenges and opportunities
 
-### Step 6: Run Meta-Prompt Creator
+This becomes the input for agent generation.
 
-```
-Input the contents of enhanced_company_overview.md into the meta-prompt creator.
+### Step 5: Generate Agents (5 min)
+Use the meta-prompt creator with enhanced_overview.md
 
-The meta-prompt will generate exactly 4 agent blocks with:
-- Company-specific customization
-- Industry-appropriate language
-- Next-level focus
-- Proper formatting
-```
+The meta-prompt will output 4 agent blocks. For each:
+1. Verify company name is used (not placeholders)
+2. Check industry-specific language
+3. Confirm next-level focus
+4. Ensure proper formatting
 
-### Step 7: Post-Process Generated Agents
+### Step 6: Customize Key Questions (3 min)
+For each generated agent, enhance the "Key Questions I Always Ask" section using the calibration guide:
 
-For each generated agent:
+**ATLAS Questions:**
+- Original questions from meta-prompt
+- "What {{INDUSTRY}} trend creates our biggest opportunity?"
+- "How do we achieve {{TRANSFORMATION}} faster than competitors?"
+- Add calibration key question
 
-1. **Verify Customization**
-   - Uses company name (not [CLIENT_NAME])
-   - References specific industry
-   - Mentions actual challenges
-   - Focuses on next-level goals
+**NAVIGATOR Questions:**
+- Original questions from meta-prompt  
+- "What's our path from {{CURRENT_METRIC}} to {{TARGET_METRIC}}?"
+- "Which processes must scale for {{TRANSFORMATION}}?"
+- Add calibration key question
 
-2. **Enhance Questions Section**
-   Based on calibration, ensure "Key Questions I Always Ask" includes:
-   - Questions from calibration doc
-   - Industry-specific questions
-   - Stage-appropriate questions
-   - Transformation-focused questions
+**MAESTRO Questions:**
+- Original questions from meta-prompt
+- "What technology enables {{TRANSFORMATION}}?"
+- "Build vs buy for {{CRITICAL_CAPABILITY}}?"
+- Add calibration key question
 
-3. **Adjust Communication Style**
-   - Match company culture (formal/casual)
-   - Use industry terminology
-   - Reference company values
-   - Appropriate sophistication level
+**CATALYST Questions:**
+- Original questions from meta-prompt
+- "What cultural shifts enable {{TRANSFORMATION}}?"
+- "Who are the key champions for change?"
+- Add calibration key question
 
-### Step 8: Save Final Agent Files
-
-Save each agent to:
-- `.agents/ATLAS.md`
+### Step 7: Save Final Agents (2 min)
+Update existing files:
+- `.agents/ATLAS.md` 
 - `.agents/NAVIGATOR.md`
 - `.agents/MAESTRO.md`
 - `.agents/CATALYST.md`
 
-Each file should have proper YAML header and follow the template structure.
-
-### Step 9: Validate Agent Quality
-
-Run test queries to ensure agents are properly calibrated:
-
-```
-@ATLAS "What should {{COMPANY_NAME}} focus on to {{NEXT_LEVEL_GOAL}}?"
-Expected: Specific strategic recommendations, not generic advice
-
-@NAVIGATOR "How can {{COMPANY_NAME}} improve {{KEY_METRIC}}?"
-Expected: Operational insights specific to their situation
-
-@MAESTRO "What technology should {{COMPANY_NAME}} prioritize?"
-Expected: Tech recommendations aligned with their maturity
-
-@CATALYST "What change challenges will {{COMPANY_NAME}} face?"
-Expected: Change insights specific to their culture/stage
+Each file must have YAML header:
+```yaml
+---
+agent: [AGENT_NAME]
+role: [Agent Title]
+company: {{COMPANY_NAME}}
+version: 1.0
+---
 ```
 
-### Step 10: Agent Quality Checklist
+### Step 8: Quality Validation (3 min)
+Test each agent with transformation-focused queries:
 
-Rate each agent 1-10 on:
-- [ ] **Specificity**: Uses company-specific context
-- [ ] **Relevance**: Focused on next-level goals  
-- [ ] **Expertise**: Demonstrates industry knowledge
-- [ ] **Actionability**: Provides clear guidance
-- [ ] **Differentiation**: Not generic AI responses
+```
+@ATLAS "What should {{COMPANY}} prioritize for {{TRANSFORMATION}}?"
+@NAVIGATOR "How do we measure progress toward {{TRANSFORMATION}}?"
+@MAESTRO "What tech investments enable {{TRANSFORMATION}}?"
+@CATALYST "What change risks could derail {{TRANSFORMATION}}?"
+```
 
-If any score < 7, return to calibration and enhance.
+Expected: Specific, actionable insights (not generic advice)
 
-### Step 11: Create Agent Summary
-
-Create: `.agents/AGENT_SUMMARY.md`
+### Step 9: Create Summary (2 min)
+Create new file: `.agents/AGENT_SUMMARY.md`
 
 ```markdown
-# Foundation™ AI Executives for {{COMPANY_NAME}}
+# Your AI Executive Team for {{COMPANY_NAME}}
 
-## Your AI Executive Team
+## Calibrated for: {{TRANSFORMATION}}
 
-### 🎯 ATLAS - Strategic Intelligence Officer
+### ATLAS - Strategic Intelligence
 **Focus**: {{ATLAS_FOCUS}}
-**Key Value**: Helps you {{ATLAS_VALUE}}
-**First Question to Ask**: "{{ATLAS_QUESTION}}"
+**First Ask**: "{{ATLAS_KEY_QUESTION}}"
 
-### 📊 NAVIGATOR - Operations Excellence Officer
+### NAVIGATOR - Operations Excellence  
 **Focus**: {{NAVIGATOR_FOCUS}}
-**Key Value**: Helps you {{NAVIGATOR_VALUE}}
-**First Question to Ask**: "{{NAVIGATOR_QUESTION}}"
+**First Ask**: "{{NAVIGATOR_KEY_QUESTION}}"
 
-### 🔧 MAESTRO - Technology Integration Officer
+### MAESTRO - Technology Integration
 **Focus**: {{MAESTRO_FOCUS}}
-**Key Value**: Helps you {{MAESTRO_VALUE}}
-**First Question to Ask**: "{{MAESTRO_QUESTION}}"
+**First Ask**: "{{MAESTRO_KEY_QUESTION}}"
 
-### 🚀 CATALYST - Change & Adoption Officer
+### CATALYST - Change & Adoption
 **Focus**: {{CATALYST_FOCUS}}
-**Key Value**: Helps you {{CATALYST_VALUE}}
-**First Question to Ask**: "{{CATALYST_QUESTION}}"
+**First Ask**: "{{CATALYST_KEY_QUESTION}}"
 
-## How They Work Together
-- ATLAS identifies the opportunity
-- NAVIGATOR plans the operation
-- MAESTRO enables with technology
-- CATALYST ensures adoption
+## They Work Together
+- ATLAS sees opportunity → NAVIGATOR plans execution
+- MAESTRO enables with tech → CATALYST ensures adoption
 
-## Calibrated for Your Success
-These agents understand:
-- Your industry: {{INDUSTRY}}
-- Your stage: {{STAGE}}
-- Your goals: {{NEXT_LEVEL}}
-- Your challenges: {{KEY_CHALLENGES}}
-
-Ready to start? Try asking any agent about your most pressing challenge.
+Ready to transform!
 ```
 
-### Step 12: Output Summary
-
+### Step 10: Complete
 ```
-Agent Generation Complete for {{COMPANY_NAME}}
+✓ Agents created and customized
+✓ Focused on {{TRANSFORMATION}}
+✓ Industry-specific language
+✓ Quality validated
 
-Customization Summary:
-- Industry Focus: {{INDUSTRY_SPECIFICS}}
-- Stage Alignment: {{ARCHETYPE_FOCUS}}
-- Next Level Goal: {{TRANSFORMATION}}
-- Cultural Fit: {{CULTURE_MATCH}}
-
-Files Created:
-✓ .agents/calibration/[ALL_CALIBRATION_FILES]
-✓ shared_context/enhanced_company_overview.md
-✓ .agents/ATLAS.md (customized)
-✓ .agents/NAVIGATOR.md (customized)
-✓ .agents/MAESTRO.md (customized)
-✓ .agents/CATALYST.md (customized)
-✓ .agents/AGENT_SUMMARY.md
-
-Quality Scores:
-- ATLAS: {{SCORE}}/10
-- NAVIGATOR: {{SCORE}}/10
-- MAESTRO: {{SCORE}}/10
-- CATALYST: {{SCORE}}/10
-
-Next Step: Create targeted file structure
-Run: /04_structure_creation
+Next: Run /04_structure_creation
+Time: ~20 minutes
 ```
 
-## Critical
+## Quick Quality Checklist
+Rate 1-10:
+- [ ] Uses company specifics (not generic)
+- [ ] Focused on transformation goal
+- [ ] Industry-appropriate language
+- [ ] Actionable insights
+- [ ] Differentiated from generic AI
+
+If any < 7, refine in Step 6.
+
+## Common Customizations by Archetype
+
+**EARLY_STARTUP**: Focus on validation, runway, first customers
+**GROWTH_STARTUP**: Focus on scaling, metrics, product-market fit
+**SCALE_UP**: Focus on efficiency, market expansion, platform
+**MID_MARKET**: Focus on digital transformation, competitive edge
+**ENTERPRISE**: Focus on innovation, disruption defense, agility
