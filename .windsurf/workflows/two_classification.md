@@ -1,8 +1,8 @@
 ---
-description: # Foundation™ Business Classification Workflow
+description: 2 - Classification
 ---
 
-# /02_classification
+# two_classification
 Analyze and classify the business for targeted intelligence
 
 ## Prerequisites
@@ -250,7 +250,7 @@ priority: "critical"
 ✓ Success metrics clear
 ✓ Agent priorities set
 
-Next: Run /03_agent_generation
+Next: Run three_structure_creation
 Time: ~10 minutes
 ```
 

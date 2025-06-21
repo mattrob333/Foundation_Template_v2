@@ -1,8 +1,119 @@
 ---
-description: Foundation™ Discovery Workflow
+description: 1 - Discovery
 ---
 
-# /01_discovery
+# one_discovery
+Gather comprehensive company intelligence
+
+## Prerequisites
+- Company URL or LinkedIn profile
+- Empty `shared_context/company_overview.md` file
+
+## Workflow Execution
+
+### Step 1: Initial Input (1 min)
+```
+Ask user: "What's the company website URL or LinkedIn profile?"
+Store as: {{COMPANY_URL}}
+
+If no URL provided:
+Ask: "What's the company name and what do they do?"
+```
+
+### Step 2: Core Company Research (5 min)
+```
+@web search "{{COMPANY_URL}}" comprehensive analysis:
+
+Essential data to find:
+- Official company name
+- Year founded and founders
+- Headquarters location
+- Employee count (check LinkedIn)
+- Industry and sub-industry
+- Products/services offered
+- Business model (B2B/B2C, SaaS/Services)
+- Revenue or funding stage
+- Recent news (last 12 months)
+```
+
+### Step 3: Leadership & Culture (3 min)
+```
+@web search "{{COMPANY_NAME}}" leadership team LinkedIn:
+
+Find:
+- CEO/Founder (name, background)
+- C-suite executives (titles, tenure)
+- Board members (if available)
+- Company values/culture
+- Management philosophy
+```
+
+### Step 4: Market Position (3 min)
+```
+@web search "{{COMPANY_NAME}}" market position competitors:
+
+Identify:
+- Main competitors (top 3-5)
+- Market share (if available)
+- Unique value proposition
+- Customer base description
+- Geographic presence
+```
+
+### Step 5: Technology Indicators (3 min)
+```
+@web search "{{COMPANY_NAME}}" job postings technology stack:
+
+Look for:
+- Technologies mentioned in jobs
+- Digital maturity indicators
+- Technical team size
+- Innovation initiatives
+- Tech partnerships
+```
+
+### Step 6: Update Company Overview (5 min)
+Update existing file: `shared_context/company_overview.md`
+
+```markdown
+---
+title: "Company Overview - {{COMPANY_NAME}}"
+source: "Web research via @web"
+owner: "intel@tier4.ai"
+agent_scope: ["ATLAS", "NAVIGATOR", "MAESTRO", "CATALYST"]
+created: "{{TODAY_DATE}}"
+tags: ["company", "overview", "public"]
+---
+
+# {{COMPANY_NAME}} Overview
+
+## Company Snapshot
+- **Founded**: {{YEAR}}
+- **Headquarters**: {{LOCATION}}
+- **Employees**: {{COUNT}} ({{SOURCE}})
+- **Industry**: {{INDUSTRY}}
+- **Website**: {{URL}}
+- **Stage**: {{FUNDING/REVENUE}}
+
+## What They Do
+{{BRIEF_DESCRIPTION}}
+
+## Products & Services
+1. **{{PRODUCT_1}}**: {{DESCRIPTION}}
+2. **{{PRODUCT_2}}**: {{DESCRIPTION}}
+3. **{{PRODUCT_3}}**: {{DESCRIPTION}}
+
+## Value Proposition
+"{{VALUE_PROP_IN_THEIR_WORDS}}"
+
+## Market Position
+- **Competitors**: {{LIST}}
+- **Differentiators**: {{KEY_DIFFERENCES}}
+- **Target Market**: {{CUSTOMER_DESCRIPTION}}
+
+## Leadership Team
+- **CEO**: {{NAME}} - {{BACKGROUND}}
+- **{{ROLE}}**: {{NAME}} - {{BACKGRO# /01_discovery
 Gather comprehensive company intelligence
 
 ## Prerequisites

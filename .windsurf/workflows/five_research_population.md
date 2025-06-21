@@ -1,8 +1,8 @@
 ---
-description: Research_Population
+description: 5 - Research_Population
 ---
 
-# /05_research_population
+# five_research_population
 Populate all files with targeted intelligence
 
 ## Prerequisites
@@ -15,7 +15,7 @@ Populate all files with targeted intelligence
 ### Step 1: Load Research Plan (2 min)
 ```
 Read from:
-1. shared_context/structure_report.md → {{FILE_LIST}}
+1. shared_context/file_inventory.md → {{FILE_LIST}}
 2. shared_context/business_classification.md → {{FOCUS_AREAS}}
 3. shared_context/next_level_goals.md → {{TRANSFORMATION}}
 

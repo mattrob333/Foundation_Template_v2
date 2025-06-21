@@ -17,24 +17,31 @@ foundation.config.yaml
 README.md
 ```
 
-**Files you CREATE NEW:**
+**Files you CREATE NEW during workflows:**
 ```
 shared_context/industry_intelligence.md
 shared_context/enhanced_overview.md
-shared_context/structure_report.md
+shared_context/file_inventory.md
 shared_context/research_summary.md
 .agents/calibration_guide.md
 .agents/AGENT_SUMMARY.md
-All files in ATLAS/ NAVIGATOR/ MAESTRO/ CATALYST/ folders
+```
+
+**Files from archetype templates (Copy/Create):**
+```
+ATLAS/[various files based on archetype]
+NAVIGATOR/[various files based on archetype]
+MAESTRO/[various files based on archetype]
+CATALYST/[various files based on archetype]
 ```
 
 ## Workflow Order & Time
 
-1. `/01_discovery` → 20 min → Updates company_overview.md
-2. `/02_classification` → 10 min → Updates classification.md & goals.md
-3. `/03_agent_generation` → 20 min → Updates all agents + creates new files
-4. `/04_structure_creation` → 10 min → Creates 15-25 new files
-5. `/05_research_population` → 60 min → Updates all created files
+1. `one_discovery` → 20 min → Updates company_overview.md
+2. `two_classification` → 10 min → Updates classification.md & goals.md
+3. `three_structure_creation` → 10 min → Creates 15-25 archetype-specific files
+4. `four_agent_generation` → 20 min → Updates agents with file knowledge
+5. `five_research_population` → 60 min → Populates all files with intelligence
 
 **Total: 2-3 hours**
 
@@ -70,14 +77,16 @@ All files in ATLAS/ NAVIGATOR/ MAESTRO/ CATALYST/ folders
 @ATLAS What's our next level transformation goal?
 ```
 
-### After Agent Generation:
-```
-@[ANY_AGENT] What should {{company}} focus on?
-```
-
 ### After Structure Creation:
 ```
-Check: Do all agents have their own folders with files?
+Check: Do all agent folders have archetype-specific files?
+Look for: shared_context/file_inventory.md
+```
+
+### After Agent Generation:
+```
+@[ANY_AGENT] What files do you have access to?
+@[ANY_AGENT] What should {{company}} focus on?
 ```
 
 ### After Research:
