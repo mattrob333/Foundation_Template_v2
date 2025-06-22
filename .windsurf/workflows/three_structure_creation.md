@@ -5,24 +5,20 @@ description: Structure_Creation
 # three_structure_creation
 Create optimized file structure based on business archetype
 
-## Prerequisites
-- Completed business classification
-- Access to `.templates/archetype_templates/`
+Prerequisites
 
-## Workflow Execution
+Completed business classification
+Access to .templates/archetype_templates/
 
-### Step 1: Load Configuration (1 min)
-```
+Workflow Execution
+Step 1: Load Configuration (1 min)
 Read from: shared_context/business_classification.md
 Extract:
 - Archetype: {{ARCHETYPE}}
 - Industry: {{INDUSTRY}}
 - Focus Areas: {{MUST_HAVE_AREAS}}
 - Skip Areas: {{SKIP_AREAS}}
-```
-
-### Step 2: Select Archetype Template (2 min)
-```
+Step 2: Select Archetype Template (2 min)
 Based on {{ARCHETYPE}}, select template from:
 .templates/archetype_templates/
 
@@ -31,10 +27,7 @@ Based on {{ARCHETYPE}}, select template from:
 - SCALE_UP → scale_up_template/
 - MID_MARKET → mid_market_template/
 - ENTERPRISE → enterprise_template/
-```
-
-### Step 3: Copy Template Structure (3 min)
-```
+Step 3: Copy Template Structure (3 min)
 Copy the appropriate template structure to create:
 
 For EARLY_STARTUP:
@@ -61,10 +54,7 @@ For ENTERPRISE:
 - Innovation framework
 - Disruption defense
 - New ventures focus
-```
-
-### Step 4: Create Industry Overlay Files (3 min)
-```
+Step 4: Create Industry Overlay Files (3 min)
 Based on {{INDUSTRY}}, add specialized files:
 
 For SaaS/Technology:
@@ -90,10 +80,7 @@ Create new files:
 - NAVIGATOR/operations/risk_management.md
 - MAESTRO/architecture/security_framework.md
 - ATLAS/strategy/fintech_threats.md
-```
-
-### Step 5: Add Headers to All Files (3 min)
-```
+Step 5: Add Headers to All Files (3 min)
 For each file (both from template and newly created):
 
 Add/update YAML header:
@@ -119,49 +106,32 @@ tags: ["{{archetype}}", "{{relevant}}", "{{tags}}"]
 - {{Question 1}}
 - {{Question 2}}
 - {{Question 3}}
-```
+Step 6: Create File Inventory (3 min)
+Create new file: shared_context/file_inventory.md
+Use the file inventory template to document:
 
-### Step 6: Create File Inventory (2 min)
-Create new file: `shared_context/file_inventory.md`
+All files created for each agent
+File paths and purposes
+Population priority order
+Status tracking (Empty/Partial/Complete)
+Maintenance schedule
 
-```markdown
----
-title: "File Inventory - {{COMPANY_NAME}}"
-created: "{{TODAY_DATE}}"
----
+markdownExample structure:
+## 🚀 CATALYST Files
+### /sentiment
+| File | Path | Status | Priority | Purpose |
+|------|------|--------|----------|---------|
+| employee_pulse.md | CATALYST/sentiment/employee_pulse.md | Empty | High | Track employee sentiment |
 
-# Foundation File Inventory
+[Continue for all files...]
+The inventory serves as:
 
-## Files by Agent
+Master list for research population
+Progress tracking during setup
+Maintenance checklist post-launch
+Documentation for handoffs
 
-### CATALYST ({{COUNT}} files)
-{{LIST_ALL_CATALYST_FILES_WITH_PATHS}}
-
-### ATLAS ({{COUNT}} files)  
-{{LIST_ALL_ATLAS_FILES_WITH_PATHS}}
-
-### NAVIGATOR ({{COUNT}} files)
-{{LIST_ALL_NAVIGATOR_FILES_WITH_PATHS}}
-
-### MAESTRO ({{COUNT}} files)
-{{LIST_ALL_MAESTRO_FILES_WITH_PATHS}}
-
-## Total Files: {{TOTAL_COUNT}}
-
-## Priority Order for Population
-Based on {{NEXT_LEVEL_GOAL}}:
-
-High Priority:
-1. {{FILE_PATH}} - Critical for {{REASON}}
-2. {{FILE_PATH}} - Critical for {{REASON}}
-3. {{FILE_PATH}} - Critical for {{REASON}}
-
-Medium Priority:
-[Continue...]
-```
-
-### Step 7: Complete
-```
+Step 7: Complete
 ✓ Archetype template applied
 ✓ Industry-specific files added
 ✓ All files have proper headers
@@ -170,18 +140,17 @@ Medium Priority:
 
 Next: Run four_agent_generation
 Time: ~10 minutes
-```
+Notes
+Why Templates Matter:
 
-## Notes
+Consistency across Foundations
+Best practices built-in
+Faster setup time
+Fewer missed files
 
-**Why Templates Matter:**
-- Consistency across Foundations
-- Best practices built-in
-- Faster setup time
-- Fewer missed files
+Customization:
 
-**Customization:**
-- Templates are starting points
-- Add/remove files based on specific needs
-- Industry overlays add specialization
-- Keep focus on transformation goals
+Templates are starting points
+Add/remove files based on specific needs
+Industry overlays add specialization
+Keep focus on transformation goals
