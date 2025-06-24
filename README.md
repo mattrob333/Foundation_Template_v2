@@ -69,6 +69,38 @@ Transform how businesses leverage AI by creating a GitHub-based intelligence sys
    @CATALYST How do we manage this transformation?
    ```
 
+## 🎪 Demo Launcher
+
+### Instant Demonstrations
+Run the complete Foundation workflow for any company without touching the template:
+
+```bash
+# Simple option - just double-click
+START_DEMO.bat
+
+# Or use PowerShell for more control
+.\START_FOUNDATION_DEMO.ps1 -CompanyName "Stripe" -CompanyURL "https://stripe.com"
+```
+
+### What It Does
+- Creates isolated demo environment
+- Runs full workflow in ~15-20 minutes
+- Generates all 4 AI executives
+- Preserves template integrity
+
+### Example Output
+See `TEST_WORKFLOW/` for a complete Notion Labs analysis including:
+- Discovery & classification results
+- Research data & validation
+- All 4 AI executives (ATLAS, NAVIGATOR, MAESTRO, CATALYST)
+- Executive summary with investment thesis
+
+Perfect for:
+- Team demonstrations
+- Client presentations
+- Testing improvements
+- Training sessions
+
 ## 📁 Repository Structure
 
 ```
@@ -92,6 +124,10 @@ foundation-[company-name]/
 ├── NAVIGATOR/                # Operational intelligence files
 ├── MAESTRO/                  # Technology intelligence files
 ├── CATALYST/                 # Change intelligence files
+├── TEST_WORKFLOW/            # Example Notion Labs analysis
+├── START_DEMO.bat           # Quick demo launcher
+├── START_FOUNDATION_DEMO.ps1 # Advanced demo launcher
+├── DEMO_LAUNCHER_README.md  # Demo documentation
 └── foundation.config.yaml    # Configuration file
 ```
 
